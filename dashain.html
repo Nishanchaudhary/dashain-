@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>दशैंको शुभकामना 🪔 | Happy Vijaya Dashami</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&family=Cinzel:wght@700&family=Mukta:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Mukta', 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 30%, #3a0f0f, #1a0505 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ====== FALLING JAMARA & FLOWERS RAIN ====== */
+    .rain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .rain-item {
+      position: absolute;
+      top: -10%;
+      font-size: 1.8rem;
+      animation: fallDown linear infinite;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    }
+
+    @keyframes fallDown {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* sway animation variation */
+    .rain-item.sway {
+      animation-name: fallSway;
+    }
+
+    @keyframes fallSway {
+      0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      25% { transform: translateY(25vh) translateX(30px) rotate(90deg); }
+      50% { transform: translateY(50vh) translateX(-30px) rotate(180deg); }
+      75% { transform: translateY(75vh) translateX(30px) rotate(270deg); }
+      90% { opacity: 1; }
+      100% {
+        transform: translateY(110vh) translateX(0) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* ====== CARD (TRANSPARENT BACKGROUND) ====== */
+    .card {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: 2px solid rgba(255, 200, 50, 0.7);
+      border-radius: 3rem;
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 2.8rem 2.5rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 215, 0, 0.4), 0 0 60px rgba(255, 100, 0, 0.4);
+      position: relative;
+      z-index: 10;
+      transition: transform 0.4s ease;
+      animation: cardGlow 3s infinite alternate;
+    }
+
+    @keyframes cardGlow {
+      0% { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 150, 0, 0.4); }
+      100% { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 70px rgba(255, 200, 0, 0.9); }
+    }
+
+    /* ====== IMAGE SECTION ====== */
+    .image-section {
+      text-align: center;
+      padding: 0.5rem;
+      position: relative;
+    }
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 2.5rem;
+      overflow: hidden;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.8), 0 0 0 4px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 100, 0, 0.6);
+      transition: all 0.5s ease;
+      border: 2px solid #ffd966;
+      background: #0d0404;
+    }
+
+    .image-wrapper:hover {
+      transform: scale(1.02) rotate(0.5deg);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 0 6px #ffd966, 0 0 80px #ffb347;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+      filter: brightness(1.1) saturate(1.25) contrast(1.05);
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
+    /* divine glow overlay */
+    .image-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.15), transparent 70%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .image-caption {
+      margin-top: 1.2rem;
+      color: #ffd966;
+      font-size: 1rem;
+      letter-spacing: 3px;
+      font-weight: 400;
+      text-transform: uppercase;
+      opacity: 0.95;
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+    }
+
+    .image-caption i {
+      animation: pulse 2s infinite;
+      display: inline-block;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* ====== TEXT SECTION ====== */
+    .text-section {
+      color: #fff5e0;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #e6b800;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-shadow: 0 0 12px rgba(255, 200, 0, 0.7);
+    }
+
+    .subhead i {
+      font-size: 1.3rem;
+      color: #ffb347;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 200, 0, 0.9);
+      color: #ffecb3;
+      letter-spacing: 1px;
+    }
+
+    h1 span {
+      font-family: 'Mukta', 'Cinzel', serif;
+      color: #ffb347;
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 0 0 25px rgba(255, 180, 0, 1);
+      margin-top: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .message {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: #f5e6d3;
+      border-left: 4px solid #ffb347;
+      padding-left: 1.8rem;
+      text-align: left;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .message i {
+      color: #ffb347;
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    .wish-btn {
+      background: linear-gradient(135deg, #b8860b, #d4a017, #ffb347, #ffd966);
+      border: none;
+      padding: 1.1rem 3rem;
+      border-radius: 60px;
+      font-family: 'Mukta', 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #1a0b0b;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 215, 0, 0.5), 0 0 35px rgba(255, 150, 0, 0.7);
+      transition: all 0.3s ease;
+      letter-spacing: 0.8px;
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(255, 255, 200, 0.9);
+      text-transform: uppercase;
+    }
+
+    .wish-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.8), 0 0 0 4px #ffd966, 0 0 60px #ffb347;
+      background: linear-gradient(135deg, #d4a017, #ffb347, #ffd966, #fff3b0);
+    }
+
+    .wish-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .wish-output {
+      font-size: 1.15rem;
+      color: #ffeaa7;
+      font-weight: 400;
+      min-height: 4rem;
+      border-top: 2px dashed rgba(255, 215, 0, 0.7);
+      padding-top: 1.5rem;
+      transition: 0.3s;
+      font-style: italic;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      line-height: 1.6;
+    }
+
+    .wish-output i {
+      color: #ffb347;
+      margin-right: 12px;
+      font-size: 1.4rem;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 900px) {
+      .card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1.8rem;
+        border-radius: 2.5rem;
+      }
+
+      .image-section {
+        order: 1;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .text-section {
+        order: 2;
+        text-align: center;
+        padding: 0.5rem;
+      }
+
+      .subhead {
+        justify-content: center;
+      }
+
+      .message {
+        text-align: center;
+        border-left: none;
+        border-top: 2px solid #ffb347;
+        border-bottom: 2px solid #ffb347;
+        padding: 1.2rem 0;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      h1 span {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h1 span {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1.5rem;
+        border-radius: 2rem;
+      }
+      .wish-btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+      }
+      .message {
+        font-size: 0.98rem;
+        padding: 0.8rem 0;
+      }
+      .subhead {
+        letter-spacing: 5px;
+        font-size: 0.85rem;
+      }
+      .image-caption {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+      }
+    }
+
+    /* ====== DECORATIVE FOOTER ====== */
+    .footer-note {
+      position: fixed;
+      bottom: 12px;
+      right: 22px;
+      color: rgba(255, 215, 0, 0.55);
+      font-size: 0.85rem;
+      z-index: 20;
+      letter-spacing: 1.5px;
+      font-weight: 300;
+      text-shadow: 0 0 12px rgba(255,200,0,0.7);
+    }
+
+    .footer-note i {
+      animation: spin 8s infinite linear;
+      display: inline-block;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Falling Jamara & Flowers Rain Container -->
+  <div class="rain-container" id="rainContainer"></div>
+
+  <div class="card">
+    <!-- LEFT: IMAGE OF GODDESS DURGA (from Google) -->
+    <div class="image-section">
+      <div class="image-wrapper">
+        <!-- Goddess Durga image from Google (Wikimedia Commons - reliable URL) -->
+        <img 
+          src="./Durga_mata.png"
+          alt="माँ दुर्गा - Goddess Durga – Dashain festival"
+          loading="lazy"
+          onerror="this.onerror=null; this.src='./Durga_mata.png';"
+        >
+      </div>
+      <div class="image-caption">
+        <i class="fas fa-om"></i> माँ दुर्गा <i class="fas fa-om"></i>
+      </div>
+    </div>
+
+    <!-- RIGHT: TEXT + WISH -->
+    <div class="text-section">
+      <div class="subhead">
+        <i class="fas fa-star"></i> विजया दशमी <i class="fas fa-star"></i>
+      </div>
+      <h1>
+        Happy Dashain
+        <span>॥ शुभ विजया दशमी ॥</span>
+      </h1>
+      <div class="message">
+        <i class="fas fa-hand-holding-heart"></i> माँ दुर्गाले तपाईंलाई विजय, समृद्धि र असीम आनन्दको आशीर्वाद दिनुहोस्। <br>
+        <i class="fas fa-dove"></i> टीका, जमरा र पारिवारिक मायाले भरिएको शुभ दशैंको शुभकामना।
+      </div>
+
+      <button class="wish-btn" id="wishBtn">
+        <i class="fas fa-gift"></i> शुभकामना पठाउनुहोस्
+      </button>
+      <div class="wish-output" id="wishOutput">
+        <i class="fas fa-quote-left"></i> विशेष शुभकामनाको लागि बटन थिच्नुहोस्...
+      </div>
+    </div>
+  </div>
+
+  <!-- decorative footer -->
+  <div class="footer-note">
+    <i class="fas fa-dharmachakra"></i> २०८३ दशैं <i class="fas fa-dharmachakra"></i>
+  </div>
+
+  <script>
+    (function() {
+      // ---------- FALLING JAMARA & FLOWERS RAIN ----------
+      const rainContainer = document.getElementById('rainContainer');
+      
+      // Jamara (barley sprouts) and flower symbols
+      const rainSymbols = [
+        '🌾', '🌾', '🌾',  // jamara (wheat/barley)
+        '🌸', '🌸', '🌸',  // flowers
+        '🌼', '🌺', '🏵️',  // more flowers
+        '💮', '🌻', '🌷',  // additional flowers
+        '🌿', '🍃', '🌱',  // leaves and sprouts
+        '✨', '⭐', '🌟'   // sparkles
+      ];
+
+      const rainCount = 50; // number of falling items
+
+      for (let i = 0; i < rainCount; i++) {
+        const item = document.createElement('div');
+        item.className = 'rain-item';
+        
+        // Randomly assign sway animation to some items
+        if (Math.random() > 0.5) {
+          item.classList.add('sway');
+        }
+        
+        // Random symbol
+        item.textContent = rainSymbols[Math.floor(Math.random() * rainSymbols.length)];
+        
+        // Random position, size, and animation timing
+        item.style.left = Math.random() * 100 + '%';
+        item.style.fontSize = (Math.random() * 1.8 + 1.2) + 'rem';
+        item.style.animationDuration = (Math.random() * 8 + 6) + 's';
+        item.style.animationDelay = (Math.random() * -15) + 's';
+        
+        // Different opacity per item
+        item.style.opacity = Math.random() * 0.6 + 0.4;
+        
+        rainContainer.appendChild(item);
+      }
+
+      // ---------- WISH BUTTON INTERACTION (Nepali wishes) ----------
+      const wishBtn = document.getElementById('wishBtn');
+      const wishOutput = document.getElementById('wishOutput');
+      
+      // Nepali Dashain wishes with Durga references
+      const wishes = [
+        "<i class='fas fa-om'></i> माँ दुर्गाका नौ रूपले तपाईं र तपाईंको परिवारको रक्षा गरून्। जय माता दी! शुभ दशैं २०८३।",
+        "<i class='fas fa-crown'></i> विजय तपाईंको होस्! तपाईं सधैं धर्मको मार्गमा हिँड्नुहोस्। शुभ विजया दशमी!",
+        "<i class='fas fa-hands-praying'></i> तपाईंको निधारमा लगाइने टीकाले विजय ल्याओस्, र जमराले समृद्धि। शुभ दशैं!",
+        "<i class='fas fa-heart'></i> तपाईंको दशैं खुशी, राम्रो स्वास्थ्य र दिव्य आशीर्वादले भरिपूर्ण होस्। जय दुर्गा!",
+        "<i class='fas fa-sun'></i> माँ दुर्गाको आशीर्वाद चाडपर्वको सूर्य जस्तै तपाईंमाथि चम्किरहोस्। शुभ दशैं!",
+        "<i class='fas fa-peace'></i> चाडपर्वको भावनाले तपाईंको घर हाँसो र मायाले भरून्। दशैंको हार्दिक शुभकामना!",
+        "<i class='fas fa-leaf'></i> जमरा जस्तै तपाईंको खुशी पनि बढ्दै जाओस्। तपाईं र तपाईंका प्रियजनहरूलाई शुभ दशैं!",
+        "<i class='fas fa-star-of-life'></i> देवीले तपाईंलाई दीर्घायु, कीर्ति र सफलताको आशीर्वाद दिनुहोस्। शुभ दशैं!",
+        "<i class='fas fa-gopuram'></i> तपाईंको दशैं रंगीन, आनन्दित र शान्तिपूर्ण होस्। हरेक क्षणको आनन्द लिनुहोस्!",
+        "<i class='fas fa-fire'></i> नकारात्मकता जलाउनुहोस्, सकारात्मकता अपनाउनुहोस्। शुभ दशैं र आउँदो वर्ष शुभ होस्!",
+        "<i class='fas fa-mountain'></i> हिमालयको शक्ति र दुर्गाको कृपा तपाईंसँग रहोस्। शुभ दशैं!",
+        "<i class='fas fa-dharmachakra'></i> यो विजया दशमीमा, तपाईंका सबै प्रयासहरूमा विजयी हुनुहोस्। शुभ दशैं!"
+      ];
+
+      let lastIndex = -1;
+
+      wishBtn.addEventListener('click', function() {
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * wishes.length);
+        } while (wishes.length > 1 && randomIndex === lastIndex);
+        
+        lastIndex = randomIndex;
+        const selectedWish = wishes[randomIndex];
+        
+        wishOutput.style.opacity = '0';
+        setTimeout(() => {
+          wishOutput.innerHTML = selectedWish;
+          wishOutput.style.opacity = '1';
+        }, 150);
+
+        wishBtn.style.transform = 'scale(0.97)';
+        setTimeout(() => {
+          wishBtn.style.transform = '';
+        }, 120);
+      });
+    })();
+  </script>
+</body>
+</html>
